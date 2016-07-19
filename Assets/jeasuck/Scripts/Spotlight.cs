@@ -5,7 +5,7 @@ public class Spotlight : MonoBehaviour {
 
 	public float duration = 60.0f;
 	public KeyCode keyboard;
-	private Light lt;
+	public Light lt;
 	public float Limit = 1.0f;
 
 	void Start () {

@@ -22,7 +22,7 @@ public class HealthPoints : MonoBehaviour {
 		newhptime = GameObject.FindWithTag("SpotLight").GetComponent<Spotlight>().duration;
 		float hpcal = oldhptime - newhptime;
 		points = hpcal / hptime * aaaaa;
-		check = GameObject.FindWithTag ("SpotLight").GetComponent<Spotlight> ().GetComponent<Light> ().intensity;
+		check = GameObject.FindWithTag ("SpotLight").GetComponent<Spotlight> ().lt.intensity;
 		if (check != 0f)
 			transform.position = new Vector3(transform.position.x, transform.position.y - points, transform.position.z);
 		oldhptime = newhptime;
