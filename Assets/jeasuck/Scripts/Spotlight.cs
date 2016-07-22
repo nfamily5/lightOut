@@ -7,25 +7,28 @@ public class Spotlight : MonoBehaviour {
 	public KeyCode keyboard;
 	private Light lt;
 	public float Limit = 1.0f;
+	private float userIntensity;
 
 	void Start () {
 		lt = GetComponent<Light> ();
-		lt.intensity = 0f;
+
+		userIntensity = lt.intensity;
 	}
 		
 	void Update () {
 		if (duration > 0f) {
 			if (Input.GetKeyDown (keyboard)) {
-				if (lt.intensity == 5f)
+				if (lt.intensity != 0f)
 					lt.intensity = 0f;
 				else
-					lt.intensity = 5f;
+					lt.intensity = userIntensity;
 			}
 
-			if (lt.intensity == 5f)
+		
 				duration -= Limit * Time.deltaTime;
 
-		} else
+		} 
+		else
 			lt.intensity = 0f;
 	}
 }
